@@ -120,8 +120,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 #mios
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = "/mediadir/"
+MEDIA_ROOT = BASE_DIR / 'mediadir'
 #end mios
 
 # Default primary key field type
