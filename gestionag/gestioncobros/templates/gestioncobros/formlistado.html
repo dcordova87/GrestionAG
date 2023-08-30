@@ -1,15 +1,41 @@
 {% extends 'gestioncobros/base.html' %}
 {% load static %}
 
-
+<link rel="stylesheet" type="text/css" href="{% static 'gestioncobros/css/form.css' %}" > 
 {% block content %}
     <!-- Contenido específico de la página -->
-    <h1>Generar Listado</h1>
+    <p class="h1"> Generar Listado</p>
+    <p>  Importante: </p>
+    <p>  Los archivos de excel con el listado y el pendiente deben estar en formato .xlsx </p>   
+    <p>  Es obligatorio que el fichero tenga una hoja con nombre CUP que contenga el listado,  </p> 
+    <p>  que la columna C de esa hoja tenga los números de télefonos y que el encabezado sea ¨Telefono"(sin las comillas),</p> 
+    <p>   la columna E debe tener un encabezado ¨Deuda"y es donde va a guardarse la deuda de cada cliente. </p>   
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.archivo1.label_tag }}
+            {{ form.archivo1 }}
+        </div>
+        <div class="form-group">
+            {{ form.archivo2.label_tag }}
+            {{ form.archivo2 }}
+        </div>
+        <div class="form-group">
+            {{ form.nombre_archivo.label_tag }}
+            {{ form.nombre_archivo }}
+        </div>
+        <input type="submit" class="btn btn-primary" value="Enviar">
+    </form>
+    
+    
+    <!--
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Enviar">
     </form>
+    -->
 {% endblock %}
 
 

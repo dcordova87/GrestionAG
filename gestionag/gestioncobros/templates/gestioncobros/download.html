@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Files</title>
+</head>
+<body>
+    <h1>Select files to download:</h1>
+    <form method="post" action="{% url 'download_selected' %}">
+        {% csrf_token %}
+        {% for file in files %}
+            <div>
+                <input type="checkbox" name="selected_files" value="{{ file }}">
+                <label>{{ file }}</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Download Selected Files</button>
+    </form>
+</body>
+</html>
