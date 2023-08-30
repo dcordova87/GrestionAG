@@ -4,7 +4,7 @@ from gestionag.settings import MEDIA_ROOT as mediadir
 import os
 
 
-def GenerarListado(listado, pendiente):
+def GenerarListado(listado, pendiente, nombre_archivo):
     #variables de rutas y hojas
     #listado_xlsx = 'listado.xlsx'
     #pendiente_xlsx = 'pendiente.xlsx'
@@ -40,7 +40,7 @@ def GenerarListado(listado, pendiente):
 
             sheetL.cell(row=rowNumL, column=5).value = 0
 
-    ruta_guardado = os.path.join(mediadir, 'listado1.xlsx')
+    ruta_guardado = os.path.join(mediadir, f'{nombre_archivo}.xlsx')
     #ruta_guardado = 'gestioncobros/download/listado1.xlsx'
     listado.save(ruta_guardado)
     return ruta_guardado

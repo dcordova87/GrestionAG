@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -122,6 +123,8 @@ STATIC_URL = 'static/'
 #mios
 MEDIA_URL = "/mediadir/"
 MEDIA_ROOT = BASE_DIR / 'mediadir'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 #end mios
 
 # Default primary key field type
