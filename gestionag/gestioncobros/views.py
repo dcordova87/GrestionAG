@@ -9,7 +9,7 @@ import os
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello")
+    return render(request, 'gestioncobros/index.html')
 
 
 def generarlistado(request):
@@ -35,7 +35,7 @@ def generarlistado(request):
             #return render(request, 'resultado.html', {'ruta_guardado':ruta_guardado, 'nombre_archivo':nombre_archivo})
     else:
         form = ExcelForm()
-    return render(request, 'formlistado.html', {'form': form})
+    return render(request, 'gestioncobros/formlistado.html', {'form': form})
 
 def download(request):
     #file_name = 'listado1.xlsx'
